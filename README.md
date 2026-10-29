@@ -1,7 +1,4 @@
 
-
-https://github.com/user-attachments/assets/37c8b137-1169-4dec-89a6-93eed2c907fe
-
 # xone-neo
 
 <p align="center">
