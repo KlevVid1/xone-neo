@@ -8,6 +8,10 @@
     <b>Modern Linux kernel driver for Xbox One and Xbox Series X|S accessories with Trigger Rumble Synthesis (Impulse Triggers)</b>
 </p>
 
+<p align="center">
+    <b>English</b> | <a href="README_RU.md"><b>Русский</b></a>
+</p>
+
 ---
 
 **`xone-neo`** is an enhanced fork of the [`xone`](https://github.com/dlundqvist/xone) driver by *medusalix* and *dlundqvist*. It introduces **Impulse Trigger Rumble Synthesis** (inspired by [`xpadneo`](https://github.com/atar-axis/xpadneo)), enabling tactile feedback on the left and right triggers (LT/RT) in all Linux and Proton/Wine games, even those that lack native impulse trigger support.
