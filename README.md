@@ -15,6 +15,7 @@
 <p align="center">
     <a href="#features">Features</a> •
     <a href="#demo">Demo</a> •
+    <a href="#tested-hardware">Tested Hardware</a> •
     <a href="#configuration">Configuration</a> •
     <a href="#installation">Installation</a> •
     <a href="#reloading">Reloading</a> •
@@ -57,6 +58,25 @@ https://github.com/user-attachments/assets/37c8b137-1169-4dec-89a6-93eed2c907fe
   - **Immediate Release Response**: The moment you release a trigger, vibration on that trigger cuts off instantly without waiting for any interval timer.
   - **Standalone Mode**: Allows testing or using trigger rumble haptics on actuation even without in-game rumble effects.
   - **Full Power Main Rumble**: Main grip rumble motors remain 100% unconstrained and full-strength.
+
+---
+
+<h2 id="tested-hardware">🎮 Tested Controllers (Compatibility)</h2>
+
+The following matrix tracks verified testing for trigger rumble synthesis:
+
+| Controller Model | Official Wireless Dongle | Wired (USB Cable) | Status & Notes |
+|---|:---:|:---:|---|
+| **Xbox One S / X** (Model 1708) | ✅ Verified | ✅ Verified | Full trigger rumble synthesis working as intended |
+| **Xbox One** (Original, Model 1537 / 1697) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
+| **Xbox Series X\|S** (Model 1914) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
+| **Xbox Elite Series 1** (Model 1698) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
+| **Xbox Elite Series 2** (Model 1797) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
+| **Xbox Adaptive Controller** (Model 1827) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
+| **Third-Party GIP Gamepads** (PowerA, PDP, Razer) | — | ❓ Untested | Depends on presence of physical trigger motors |
+
+> 💡 **Help us test!**  
+> If you have a controller marked as ❓ Untested, please try it out! If trigger rumble synthesis works (or if you encounter any quirks), please [open an issue](https://github.com/KlevVid1/xone-neo/issues/new?template=bug_report.yml) so we can update the table and check off your controller.
 
 ---
 
