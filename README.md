@@ -38,7 +38,7 @@ https://github.com/user-attachments/assets/37c8b137-1169-4dec-89a6-93eed2c907fe
 <h2 id="demo">🎬 Demonstration</h2>
 
 <p align="center">
-    <video src="demo.mp4" controls width="600"></video><br>
+    <video src="https://github.com/user-attachments/assets/37c8b137-1169-4dec-89a6-93eed2c907fe" controls width="80%"></video><br>
     <sub>🔊 <b>Please watch with sound enabled to hear the trigger motor vibrations!</b></sub>
 </p>
 
