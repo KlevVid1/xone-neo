@@ -1,9 +1,0 @@
-xone_gip.o
-xone_wired.o
-xone_dongle.o
-xone_gip_gamepad.o
-xone_gip_headset.o
-xone_gip_chatpad.o
-xone_gip_madcatz_strat.o
-xone_gip_madcatz_glam.o
-xone_gip_pdp_jaguar.o
