@@ -12,13 +12,22 @@
     <b>English</b> | <a href="README_RU.md"><b>Русский</b></a>
 </p>
 
+<p align="center">
+    <a href="#features">Features</a> •
+    <a href="#configuration">Configuration</a> •
+    <a href="#installation">Installation</a> •
+    <a href="#reloading">Reloading</a> •
+    <a href="#uninstallation">Uninstallation</a> •
+    <a href="#credits">Credits</a>
+</p>
+
 ---
 
 **`xone-neo`** is an enhanced fork of the [`xone`](https://github.com/dlundqvist/xone) driver by *medusalix* and *dlundqvist*. It introduces **Impulse Trigger Rumble Synthesis** (inspired by [`xpadneo`](https://github.com/atar-axis/xpadneo)), enabling tactile feedback on the left and right triggers (LT/RT) in all Linux and Proton/Wine games, even those that lack native impulse trigger support.
 
 ---
 
-## ✨ Features
+<h2 id="features">✨ Features</h2>
 
 - **🎮 All original `xone` capabilities**:
   - Full wireless support via the official Xbox Wireless USB Adapter (dongle).
@@ -37,7 +46,7 @@
 
 ---
 
-## ⚙️ Configuration & Module Parameters
+<h2 id="configuration">⚙️ Configuration & Module Parameters</h2>
 
 All parameters can be tuned in real-time via `sysfs` or configured permanently via `/etc/modprobe.d/`.
 
@@ -78,7 +87,7 @@ options xone_gip_gamepad trigger_rumble_mode=0 trigger_rumble_interval=500 trigg
 
 ---
 
-## 🚀 Installation
+<h2 id="installation">🚀 Installation</h2>
 
 ### 1. Prerequisites
 
@@ -124,7 +133,7 @@ If you use the official Xbox Wireless USB Dongle, install its proprietary firmwa
 
 ---
 
-## 🔄 Updating & Reloading
+<h2 id="reloading">🔄 Updating & Reloading</h2>
 
 To reload the driver without rebooting your computer:
 
@@ -137,7 +146,7 @@ sudo modprobe xone_gip_gamepad
 
 ---
 
-## 🗑️ Uninstallation
+<h2 id="uninstallation">🗑️ Uninstallation</h2>
 
 To remove `xone-neo` completely:
 
@@ -148,7 +157,7 @@ sudo ./uninstall.sh
 
 ---
 
-## 🤝 Credits & Acknowledgements
+<h2 id="credits">🤝 Credits & Acknowledgements</h2>
 
 - **[medusalix](https://github.com/medusalix)** for creating the revolutionary `xone` driver and reverse-engineering the GIP protocol.
 - **[dlundqvist](https://github.com/dlundqvist)** for ongoing maintenance and modernization of `xone`.

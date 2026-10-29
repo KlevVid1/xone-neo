@@ -12,13 +12,22 @@
     <a href="README.md"><b>English</b></a> | <b>Русский</b>
 </p>
 
+<p align="center">
+    <a href="#features">Возможности</a> •
+    <a href="#configuration">Настройка</a> •
+    <a href="#installation">Установка</a> •
+    <a href="#reloading">Перезапуск</a> •
+    <a href="#uninstallation">Удаление</a> •
+    <a href="#credits">Благодарности</a>
+</p>
+
 ---
 
 **`xone-neo`** — это улучшенный форк драйвера [`xone`](https://github.com/dlundqvist/xone) (авторы *medusalix* и *dlundqvist*). В проект добавлен **синтез вибрации импульсных курков** (по аналогии с концепцией [`xpadneo`](https://github.com/atar-axis/xpadneo)), что даёт тактильную отдачу на левом и правом курках (LT/RT) во всех играх под Linux и Proton/Wine, даже если игра сама по себе не поддерживает Impulse Triggers.
 
 ---
 
-## ✨ Возможности
+<h2 id="features">✨ Возможности</h2>
 
 - **🎮 Все возможности оригинального `xone`**:
   - Полная поддержка беспроводного подключения через официальный USB-адаптер (Xbox Wireless Dongle).
@@ -37,7 +46,7 @@
 
 ---
 
-## ⚙️ Настройка и параметры модуля
+<h2 id="configuration">⚙️ Настройка и параметры модуля</h2>
 
 Все параметры можно изменять на лету через `sysfs` без перезагрузки или задать перманентно через `/etc/modprobe.d/`.
 
@@ -78,7 +87,7 @@ options xone_gip_gamepad trigger_rumble_mode=0 trigger_rumble_interval=500 trigg
 
 ---
 
-## 🚀 Установка
+<h2 id="installation">🚀 Установка</h2>
 
 ### 1. Подготовка зависимостей
 
@@ -124,7 +133,7 @@ sudo ./install.sh
 
 ---
 
-## 🔄 Перезапуск драйвера без перезагрузки системы
+<h2 id="reloading">🔄 Перезапуск драйвера без перезагрузки системы</h2>
 
 Чтобы применить изменения или перезапустить драйвер:
 
@@ -137,7 +146,7 @@ sudo modprobe xone_gip_gamepad
 
 ---
 
-## 🗑️ Удаление
+<h2 id="uninstallation">🗑️ Удаление</h2>
 
 Для полного удаления `xone-neo` из системы:
 
@@ -148,7 +157,7 @@ sudo ./uninstall.sh
 
 ---
 
-## 🤝 Благодарности
+<h2 id="credits">🤝 Благодарности</h2>
 
 - **[medusalix](https://github.com/medusalix)** — за создание оригинального драйвера `xone` и реверс-инжиниринг протокола GIP.
 - **[dlundqvist](https://github.com/dlundqvist)** — за поддержку и обновление кодовой базы `xone`.
