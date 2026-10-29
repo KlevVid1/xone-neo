@@ -1,0 +1,59 @@
+name: Bug Report
+description: Report a problem or bug in xone-neo
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report an issue! Please provide as much detail as possible.
+  - type: input
+    id: controller
+    attributes:
+      label: Controller Model
+      description: What specific Xbox controller are you using?
+      placeholder: e.g. Xbox Series X|S Controller (Model 1914), Elite Series 2
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection Type
+      options:
+        - "Wireless Dongle (Official Xbox Wireless Adapter)"
+        - "Wired (USB Cable)"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Linux Distro & Kernel
+      description: Distribution and output of `uname -r`
+      placeholder: e.g. Arch Linux, 6.12.1-arch1-1
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: A clear and concise description of what the issue is.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Connect gamepad via ...
+        2. Set trigger_rumble_mode to ...
+        3. Launch game ...
+        4. See error or unexpected vibration behavior ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs (dmesg / modinfo)
+      description: Output of `sudo dmesg | grep -iE 'xone|gip'` or driver parameters.
+      render: shell

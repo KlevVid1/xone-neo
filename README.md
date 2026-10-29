@@ -25,6 +25,9 @@
 
 **`xone-neo`** is an enhanced fork of the [`xone`](https://github.com/dlundqvist/xone) driver by *medusalix* and *dlundqvist*. It introduces **Impulse Trigger Rumble Synthesis** (inspired by [`xpadneo`](https://github.com/atar-axis/xpadneo)), enabling tactile feedback on the left and right triggers (LT/RT) in all Linux and Proton/Wine games, even those that lack native impulse trigger support.
 
+> <sub>**Why a separate fork and not an upstream PR?**<br>
+> The upstream `xone` project follows a strict philosophy of "clean protocol translation" (1:1 mapping between Microsoft GIP and the Linux input subsystem without synthetic heuristics). The upstream stance is that impulse triggers should ideally be solved natively in future kernel `evdev` specifications and user-space APIs (like SDL/Wine) rather than emulated inside the driver. `xone-neo` exists as a pragmatic solution for players who want working trigger haptics in their games today.</sub>
+
 ---
 
 <h2 id="features">✨ Features</h2>
