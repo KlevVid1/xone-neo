@@ -19,13 +19,18 @@ fi
 
 if [ -n "${SUDO_USER:-}" ]; then
     # Run as normal user to prevent "unsafe repository" error
-    version=$(sudo -u "$SUDO_USER" git describe --tags 2> /dev/null || echo unknown)
+    version=$(sudo -u "$SUDO_USER" git describe --tags 2> /dev/null || echo "")
 else
-    version=unknown
+    version=$(git describe --tags 2> /dev/null || echo "")
 fi
 
 # remove "v" prefix
 version=${version##v}
+
+# Fallback to version in dkms.conf if git describe is unavailable
+if [ -z "$version" ] || [ "$version" = "unknown" ]; then
+    version=$(grep -oP 'PACKAGE_VERSION="\K[^"]+' dkms.conf 2>/dev/null || echo "0.5.8")
+fi
 
 source="/usr/src/xone-$version"
 log="/var/lib/dkms/xone/$version/build/make.log"
