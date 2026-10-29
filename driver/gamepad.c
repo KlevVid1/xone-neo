@@ -36,6 +36,10 @@ static u8 trigger_rumble_attenuation;
 module_param(trigger_rumble_attenuation, byte, 0644);
 MODULE_PARM_DESC(trigger_rumble_attenuation, "Trigger rumble attenuation percent (0-100)");
 
+static ushort trigger_rumble_interval = 500;
+module_param(trigger_rumble_interval, ushort, 0644);
+MODULE_PARM_DESC(trigger_rumble_interval, "Trigger rumble update interval in ms while vibrating (default 500ms)");
+
 /* button offset from end of packet */
 #define GIP_GP_BTN_SHARE_OFFSET 18
 
@@ -143,6 +147,7 @@ struct gip_gamepad_rumble {
 	u16 mag_right;
 	u16 trigger_left;
 	u16 trigger_right;
+	unsigned long last_trigger_update;
 
 	struct gip_gamepad *parent;
 };
@@ -240,6 +245,7 @@ static int gip_gamepad_queue_rumble(struct input_dev *dev, void *data,
 		trigger_rumble_mode, max_main, rumble->trigger_left);
 	rumble->pkt.right_trigger = gip_gamepad_calc_trigger_rumble(
 		trigger_rumble_mode, max_main, rumble->trigger_right);
+	rumble->last_trigger_update = jiffies;
 
 	/* delay rumble to work around firmware bug */
 	gip_gamepad_schedule_rumble(rumble);
@@ -536,6 +542,8 @@ static int gip_gamepad_op_input(struct gip_client *client, void *data, u32 len)
 		unsigned long flags;
 		u8 new_lt, new_rt;
 		u16 max_main;
+		bool immediate_stop;
+		bool interval_passed;
 
 		spin_lock_irqsave(&rumble->lock, flags);
 		rumble->trigger_left = trig_l;
@@ -548,10 +556,20 @@ static int gip_gamepad_op_input(struct gip_client *client, void *data, u32 len)
 			new_rt = gip_gamepad_calc_trigger_rumble(
 				trigger_rumble_mode, max_main, trig_r);
 
-			if (new_lt != rumble->pkt.left_trigger ||
-			    new_rt != rumble->pkt.right_trigger) {
+			immediate_stop = (new_lt == 0 && rumble->pkt.left_trigger > 0) ||
+					 (new_rt == 0 && rumble->pkt.right_trigger > 0);
+
+			interval_passed = (trigger_rumble_interval == 0) ||
+					  time_after_eq(jiffies,
+						rumble->last_trigger_update +
+						msecs_to_jiffies(trigger_rumble_interval));
+
+			if ((new_lt != rumble->pkt.left_trigger ||
+			     new_rt != rumble->pkt.right_trigger) &&
+			    (immediate_stop || interval_passed)) {
 				rumble->pkt.left_trigger = new_lt;
 				rumble->pkt.right_trigger = new_rt;
+				rumble->last_trigger_update = jiffies;
 				gip_gamepad_schedule_rumble(rumble);
 			}
 		}
