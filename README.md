@@ -72,7 +72,6 @@ The following matrix tracks verified testing for trigger rumble synthesis:
 | **Xbox Series X\|S** (Model 1914) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
 | **Xbox Elite Series 1** (Model 1698) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
 | **Xbox Elite Series 2** (Model 1797) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
-| **Xbox Adaptive Controller** (Model 1827) | ❓ Untested | ❓ Untested | Supported by GIP protocol, needs testing |
 | **Third-Party GIP Gamepads** (PowerA, PDP, Razer) | — | ❓ Untested | Depends on presence of physical trigger motors |
 
 > 💡 **Help us test!**  
