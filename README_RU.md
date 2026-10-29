@@ -33,8 +33,9 @@
 
 <h2 id="demo">🎬 Демонстрация работы</h2>
 
+https://github.com/user-attachments/assets/37c8b137-1169-4dec-89a6-93eed2c907fe
+
 <p align="center">
-    <video src="https://github.com/user-attachments/assets/37c8b137-1169-4dec-89a6-93eed2c907fe" controls width="80%"></video><br>
     <sub>🔊 <b>Смотрите со звуком, чтобы услышать работу вибромоторчиков курков!</b></sub>
 </p>
 
