@@ -8,3 +8,5 @@
 modules.order
 Module.symvers
 .tmp_versions
+*.mp4
+demo.mp4

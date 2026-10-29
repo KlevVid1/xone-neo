@@ -14,6 +14,7 @@
 
 <p align="center">
     <a href="#features">Features</a> •
+    <a href="#demo">Demo</a> •
     <a href="#configuration">Configuration</a> •
     <a href="#installation">Installation</a> •
     <a href="#reloading">Reloading</a> •
@@ -27,6 +28,15 @@
 
 > <sub>**Why a separate fork and not an upstream PR?**<br>
 > The upstream `xone` project follows a strict philosophy of "clean protocol translation" (1:1 mapping between Microsoft GIP and the Linux input subsystem without synthetic heuristics). The upstream stance is that impulse triggers should ideally be solved natively in future kernel `evdev` specifications and user-space APIs (like SDL/Wine) rather than emulated inside the driver. `xone-neo` exists as a pragmatic solution for players who want working trigger haptics in their games today.</sub>
+
+---
+
+<h2 id="demo">🎬 Demonstration</h2>
+
+<p align="center">
+    <video src="demo.mp4" controls width="600"></video><br>
+    <sub>🔊 <b>Please watch with sound enabled to hear the trigger motor vibrations!</b></sub>
+</p>
 
 ---
 
