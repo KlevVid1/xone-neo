@@ -35,7 +35,7 @@ fi
 source="/usr/src/xone-$version"
 log="/var/lib/dkms/xone/$version/build/make.log"
 
-if [ -n "$(dkms status xone)" ]; then
+if [ -n "$(dkms status xone 2>/dev/null)" ]; then
     echo -e 'Driver is already installed, uninstalling...\n'
     ./uninstall.sh --no-firmware
 fi
@@ -63,12 +63,12 @@ if dkms install -m xone -v "$version" --force; then
 
     # Avoid conflicts between xpad and xone
     if lsmod | grep -q '^xpad'; then
-        modprobe -r xpad
+        modprobe -r xpad 2>/dev/null || true
     fi
 
-    # Avoid conflicts between mt76x2u and xone
+    # Avoid conflicts between mt76x2u and xone (disable Wi-Fi driver attachment)
     if lsmod | grep -q '^mt76x2u'; then
-        modprobe -r mt76x2u
+        modprobe -r mt76x2u 2>/dev/null || true
     fi
 else
     if [ -r "$log" ]; then
